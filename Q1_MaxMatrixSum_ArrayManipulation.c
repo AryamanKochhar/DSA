@@ -34,4 +34,4 @@ long long maxMatrixSum(int** matrix, int matrixSize, int* matrixColSize) {
         // Otherwise, one negative must remain; subtract twice the smallest absolute value
         return sum - 2 * mi;
     }
-}  make it for this code
+}  
