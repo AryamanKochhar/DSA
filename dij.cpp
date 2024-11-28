@@ -1,9 +1,8 @@
-class Solution {
-private:
+#include <iostream>
+using namespace std;
+int main(){
     // Directions for movement: right, left, down, up
     vector<vector<int>> directions = {{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
-
-public:
     int minimumObstacles(vector<vector<int>>& grid) {
         int m = grid.size(), n = grid[0].size();
 
