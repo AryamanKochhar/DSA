@@ -32,15 +32,14 @@ vector<char> inqu(vector<char> Q, int y) {
     int n = Q.size();
     while (y>0) {
         vector<char> qu=Q;
-        for (int i = 0; i < n - 1; i++) {
+        for (int i = 0; i < n - 1;i++) {
             if (Q[i] == 'B' && Q[i + 1] == 'G') {
-              
                 swap(qu[i], qu[i + 1]);
-                i++; 
+                // i++; 
             }
         }
-        Q = qu; // Update Q for the next second
-        y--; // Decrement time after a full pass
+        Q = qu;
+        y--;
     }
     return Q;
 }
@@ -49,7 +48,6 @@ int main() {
    cin.tie(NULL);
    cout.tie(NULL);
   int x=0,y=0;
-  // Your code here
   cin>>x;
   cin>>y;
   vector<char> Q;
