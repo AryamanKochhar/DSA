@@ -53,6 +53,10 @@ int main() {
     cin >> c;
     Q.push_back(c);
   }
-
-   return 0;
+  vector<char> a;
+  a=inqu(Q,y);
+  for(auto i:a){
+    cout<<i;
+  }
+  return 0;
 }
