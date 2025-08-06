@@ -23,22 +23,27 @@ typedef vector<int> vi;
 const int MOD = 1e9 + 7;
 const int INF = INT_MAX;
 
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
 vector<char> inqu(vector<char> Q, int y) {
-  int n=Q.size();
-
-  for(int i=0;i<n;i++){
-    while(y>0){
-    if(Q[i]=='B' && Q[i+1]=='G'){
-      swap(Q[i],Q[i+1]);
+    int n = Q.size();
+    while (y>0) {
+        vector<char> qu=Q;
+        for (int i = 0; i < n - 1; i++) {
+            if (Q[i] == 'B' && Q[i + 1] == 'G') {
+              
+                swap(qu[i], qu[i + 1]);
+                i++; 
+            }
+        }
+        Q = qu; // Update Q for the next second
+        y--; // Decrement time after a full pass
     }
-    y--;
-  }
-  }
-  return Q;
-
-
+    return Q;
 }
-
 int main() {
    ios::sync_with_stdio(false);
    cin.tie(NULL);
@@ -48,7 +53,7 @@ int main() {
   cin>>x;
   cin>>y;
   vector<char> Q;
-  for(int i=0;i>x;i++){
+  for(int i=0;i<x;i++){
     char c;
     cin >> c;
     Q.push_back(c);
